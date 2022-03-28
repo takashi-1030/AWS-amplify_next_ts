@@ -1,0 +1,11 @@
+version: "3"
+services:
+  amplify:
+    build: ./
+    ports:
+      - "3000:3000"
+      - "20002:20002"
+    volumes:
+      - ./:/var/www/amplify
+      - ./:/root/.aws/
+    tty: true
