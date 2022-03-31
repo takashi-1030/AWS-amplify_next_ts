@@ -1,4 +1,4 @@
-export const dictionary = {
+const dictionary = {
   ja: {
     "Confirm Password": "パスワード（確認用）",
     "Create Account": "アカウントを作成",

@@ -4,7 +4,7 @@ import { FC } from "react";
 
 configure();
 
-export const LoginRequired: FC = ({ children }) => {
+const LoginRequired: FC = ({ children }) => {
   return (
     <Authenticator signUpAttributes={["name"]}>
       {() => <>{children}</>}

@@ -1,4 +1,4 @@
-import { LoginRequired } from "./components/auth";
+import LoginRequired from "./components/auth";
 import { useAuthenticator } from "@aws-amplify/ui-react";
 import "@aws-amplify/ui-react/styles.css";
 
