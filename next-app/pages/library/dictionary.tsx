@@ -12,3 +12,5 @@ export const dictionary = {
     "Sign Up with Google": "Googleアカウントで作成",
   },
 };
+
+export default dictionary;

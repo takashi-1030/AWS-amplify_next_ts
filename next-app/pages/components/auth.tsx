@@ -11,3 +11,5 @@ export const LoginRequired: FC = ({ children }) => {
     </Authenticator>
   );
 };
+
+export default LoginRequired;
