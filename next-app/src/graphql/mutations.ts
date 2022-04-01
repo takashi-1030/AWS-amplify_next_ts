@@ -10,9 +10,12 @@ export const createTodo = /* GraphQL */ `
     createTodo(input: $input, condition: $condition) {
       id
       name
+      status
+      deadLine
       description
       createdAt
       updatedAt
+      owner
     }
   }
 `;
@@ -24,9 +27,12 @@ export const updateTodo = /* GraphQL */ `
     updateTodo(input: $input, condition: $condition) {
       id
       name
+      status
+      deadLine
       description
       createdAt
       updatedAt
+      owner
     }
   }
 `;
@@ -38,9 +44,12 @@ export const deleteTodo = /* GraphQL */ `
     deleteTodo(input: $input, condition: $condition) {
       id
       name
+      status
+      deadLine
       description
       createdAt
       updatedAt
+      owner
     }
   }
 `;

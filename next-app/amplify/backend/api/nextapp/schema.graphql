@@ -1,0 +1,28 @@
+type Todo
+  @model
+  @auth(
+    rules: [
+      { allow: owner, operations: [create, read, update, delete] }
+      { allow: private, operations: [read, update] }
+    ]
+  ) {
+  id: ID!
+  name: String!
+    @auth(
+      rules: [
+        { allow: owner, operations: [read, update] }
+        { allow: private, operations: [read] }
+      ]
+    )
+  status: TodoStatus!
+  deadLine: AWSDateTime
+  description: String
+}
+
+enum TodoStatus {
+  NONE
+  BACKLOG
+  DOING
+  REVIEW
+  DONE
+}

@@ -5,11 +5,24 @@
 export type CreateTodoInput = {
   id?: string | null,
   name: string,
+  status: TodoStatus,
+  deadLine?: string | null,
   description?: string | null,
 };
 
+export enum TodoStatus {
+  NONE = "NONE",
+  BACKLOG = "BACKLOG",
+  DOING = "DOING",
+  REVIEW = "REVIEW",
+  DONE = "DONE",
+}
+
+
 export type ModelTodoConditionInput = {
   name?: ModelStringInput | null,
+  status?: ModelTodoStatusInput | null,
+  deadLine?: ModelStringInput | null,
   description?: ModelStringInput | null,
   and?: Array< ModelTodoConditionInput | null > | null,
   or?: Array< ModelTodoConditionInput | null > | null,
@@ -56,18 +69,28 @@ export type ModelSizeInput = {
   between?: Array< number | null > | null,
 };
 
+export type ModelTodoStatusInput = {
+  eq?: TodoStatus | null,
+  ne?: TodoStatus | null,
+};
+
 export type Todo = {
   __typename: "Todo",
   id: string,
   name: string,
+  status: TodoStatus,
+  deadLine?: string | null,
   description?: string | null,
   createdAt: string,
   updatedAt: string,
+  owner?: string | null,
 };
 
 export type UpdateTodoInput = {
   id: string,
   name?: string | null,
+  status?: TodoStatus | null,
+  deadLine?: string | null,
   description?: string | null,
 };
 
@@ -78,6 +101,8 @@ export type DeleteTodoInput = {
 export type ModelTodoFilterInput = {
   id?: ModelIDInput | null,
   name?: ModelStringInput | null,
+  status?: ModelTodoStatusInput | null,
+  deadLine?: ModelStringInput | null,
   description?: ModelStringInput | null,
   and?: Array< ModelTodoFilterInput | null > | null,
   or?: Array< ModelTodoFilterInput | null > | null,
@@ -116,9 +141,12 @@ export type CreateTodoMutation = {
     __typename: "Todo",
     id: string,
     name: string,
+    status: TodoStatus,
+    deadLine?: string | null,
     description?: string | null,
     createdAt: string,
     updatedAt: string,
+    owner?: string | null,
   } | null,
 };
 
@@ -132,9 +160,12 @@ export type UpdateTodoMutation = {
     __typename: "Todo",
     id: string,
     name: string,
+    status: TodoStatus,
+    deadLine?: string | null,
     description?: string | null,
     createdAt: string,
     updatedAt: string,
+    owner?: string | null,
   } | null,
 };
 
@@ -148,9 +179,12 @@ export type DeleteTodoMutation = {
     __typename: "Todo",
     id: string,
     name: string,
+    status: TodoStatus,
+    deadLine?: string | null,
     description?: string | null,
     createdAt: string,
     updatedAt: string,
+    owner?: string | null,
   } | null,
 };
 
@@ -163,9 +197,12 @@ export type GetTodoQuery = {
     __typename: "Todo",
     id: string,
     name: string,
+    status: TodoStatus,
+    deadLine?: string | null,
     description?: string | null,
     createdAt: string,
     updatedAt: string,
+    owner?: string | null,
   } | null,
 };
 
@@ -182,12 +219,19 @@ export type ListTodosQuery = {
       __typename: "Todo",
       id: string,
       name: string,
+      status: TodoStatus,
+      deadLine?: string | null,
       description?: string | null,
       createdAt: string,
       updatedAt: string,
+      owner?: string | null,
     } | null >,
     nextToken?: string | null,
   } | null,
+};
+
+export type OnCreateTodoSubscriptionVariables = {
+  owner?: string | null,
 };
 
 export type OnCreateTodoSubscription = {
@@ -195,10 +239,17 @@ export type OnCreateTodoSubscription = {
     __typename: "Todo",
     id: string,
     name: string,
+    status: TodoStatus,
+    deadLine?: string | null,
     description?: string | null,
     createdAt: string,
     updatedAt: string,
+    owner?: string | null,
   } | null,
+};
+
+export type OnUpdateTodoSubscriptionVariables = {
+  owner?: string | null,
 };
 
 export type OnUpdateTodoSubscription = {
@@ -206,10 +257,17 @@ export type OnUpdateTodoSubscription = {
     __typename: "Todo",
     id: string,
     name: string,
+    status: TodoStatus,
+    deadLine?: string | null,
     description?: string | null,
     createdAt: string,
     updatedAt: string,
+    owner?: string | null,
   } | null,
+};
+
+export type OnDeleteTodoSubscriptionVariables = {
+  owner?: string | null,
 };
 
 export type OnDeleteTodoSubscription = {
@@ -217,8 +275,11 @@ export type OnDeleteTodoSubscription = {
     __typename: "Todo",
     id: string,
     name: string,
+    status: TodoStatus,
+    deadLine?: string | null,
     description?: string | null,
     createdAt: string,
     updatedAt: string,
+    owner?: string | null,
   } | null,
 };

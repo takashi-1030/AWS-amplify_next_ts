@@ -7,9 +7,12 @@ export const getTodo = /* GraphQL */ `
     getTodo(id: $id) {
       id
       name
+      status
+      deadLine
       description
       createdAt
       updatedAt
+      owner
     }
   }
 `;
@@ -23,9 +26,12 @@ export const listTodos = /* GraphQL */ `
       items {
         id
         name
+        status
+        deadLine
         description
         createdAt
         updatedAt
+        owner
       }
       nextToken
     }

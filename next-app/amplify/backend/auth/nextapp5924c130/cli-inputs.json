@@ -1,10 +1,10 @@
 {
   "version": "1",
   "cognitoConfig": {
-    "identityPoolName": "amplifyc6830e93_identitypool_c6830e93",
+    "identityPoolName": "nextapp5924c130_identitypool_5924c130",
     "allowUnauthenticatedIdentities": false,
-    "resourceNameTruncated": "amplifc6830e93",
-    "userPoolName": "amplifyc6830e93_userpool_c6830e93",
+    "resourceNameTruncated": "nextap5924c130",
+    "userPoolName": "nextapp5924c130_userpool_5924c130",
     "autoVerifiedAttributes": [
       "email"
     ],
@@ -31,10 +31,10 @@
     "userpoolClientReadAttributes": [
       "email"
     ],
-    "userpoolClientLambdaRole": "amplifc6830e93_userpoolclient_lambda_role",
+    "userpoolClientLambdaRole": "nextap5924c130_userpoolclient_lambda_role",
     "userpoolClientSetAttributes": false,
-    "sharedId": "c6830e93",
-    "resourceName": "amplifyc6830e93",
+    "sharedId": "5924c130",
+    "resourceName": "nextapp5924c130",
     "authSelections": "identityPoolAndUserPool",
     "useDefault": "default",
     "usernameAttributes": [
